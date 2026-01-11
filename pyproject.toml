@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chemeng"
+version = "0.1.0"
+description = "A comprehensive computational chemical engineering package for calculations and modeling"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Siddharth Srinivasan", email = ""}
+]
+keywords = ["chemical engineering", "thermodynamics", "reaction engineering", "heat transfer", "mass transfer", "fluid mechanics", "process control"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+]
+all = [
+    "numpy>=1.20.0",
+    "scipy>=1.7.0",
+    "matplotlib>=3.3.0",
+]
+
+[tool.setuptools]
+packages = ["FPM", "CRE", "ChET", "HT", "MT", "PDC", "PDPE", "TranPheno", "Math"]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["FPM*", "CRE*", "ChET*", "HT*", "MT*", "PDC*", "PDPE*", "TranPheno*", "Math*"]
+exclude = ["__pycache__*", "*.pyc", "*__pycache__*", "Useful Computational Math Implementations*", "chemeng*"]
